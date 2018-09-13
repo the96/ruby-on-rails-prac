@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese');
+
+
+.container{
+  padding: 0.25em 1em 1em 1em;
+  max-width: 100vm;
+}
+.text-light-thema{
+  color: #222;
+}
+.text-dark-thema{
+  color: #DDE;
+}
+header{
+  max-width: 100vm;
+}
+header.dark-thema{
+  background-color: #222;
+}
+header.light-thema{
+  background-color: #fff;
+}
+header .title{
+  padding: 0.1em 0em 0.15em 1em;
+  font-family: 'Bree Serif', serif;
+  font-size: 224%;
+  color: #B6E002;
+}
+.description{
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+}
+.overlay-text {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  color: #222;
+}
+.description .title{
+  font-size: 225%;
+  font-weight: 700;
+}
+.description .text{
+  padding: 0 1em;
+  width: 450px;
+  font-size: 150%;
+  font-weight: 400;
+}
+.description .bg_img{
+  width: 100vm;
+  height: 400px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.heading {
+  width: 100vm;
+}
+.heading .title{
+  background: #222;
+  padding: 2em 0 1em 1em;
+  font-size: 2.5em;
+  font-weight: 700;
+  font-family: 'Bree Serif', serif;
+}
+.heading .body{
+  padding: 0 0 0 2em;
+  font-weight: 300;
+  font-size: 2em;
+  background: #fff;
+}
