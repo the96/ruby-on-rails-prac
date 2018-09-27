@@ -1,0 +1,67 @@
+<%= render 'layouts/header' %>
+<div class="description">
+  <%= image_tag 'zerlock_header',:class => 'bg_img' %>
+  <div class="overlay-text top right">
+    <p class="title">
+    百合、金髪、時々ぷよぷよ。
+    </p>
+    <p class="text" style="width:600px">
+    百合や金髪を糧に、ぷよぷよをプレイするオタク。最近はカラオケにハマっている。
+    </p>
+  </div>
+</div>
+<div class="break-band"></div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  About Me
+  </p>
+  <div class="profile">
+    <%= image_tag 'zerlock_icon', :class => 'icon' %>
+    <ul class="body text">
+      <li>兵庫県神戸市生まれの関西人。</li>
+      <li>かわいい女の子のキャラクターが好き。百合と金髪に目がない。</li>
+      <li>ぷよぷよとTRPG、カラオケが趣味。</li>
+      <li>音楽ジャンルはロック、ボカロが好き。</li>
+      <li>好きなバンドはUVERworld。</li>
+      <li>好きなボカロPはナナホシ管弦楽団、doriko。</li>
+    </ul>
+  </div>
+</div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  Creative Field
+  </p>
+  <ul class="body field">
+    <li>Programming
+      <ul class="child">
+        <li>Java</li>
+        <li>Ruby on Rails</li>
+        <li>JavaScript</li>
+        <li>HTML+CSS</li>
+      </ul>
+    </li>
+    <li>Scenario Writing</li>
+    <ul class="child">
+      <li>TRPG</li>
+      <li>Girl's Love</li>
+    </ul>
+  </ul>
+</div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  Contact
+  </p>
+  <ul class="body contact text">
+    <li class="twitter">Twitter: 
+    <%= link_to '@zer1ock', 'https://twitter.com/zer1ock', :target=>["_blank"] %>
+    </li>
+    <li class="github">Github: <%= link_to  'the96', 'https://github.com/the96', :target=>["_blank"] %></li>
+    <li class="discord">Discord: zerlock#1889
+    </li>
+    <li class="email">
+    Gmail: <%= mail_to 'aar30px2@gmail.com', 'aar30px2'%>
+    </li>
+  </ul>
+</div>
+
+<%= render 'layouts/footer' %>

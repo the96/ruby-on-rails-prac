@@ -17,10 +17,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese');
 
-
-.container{
-//  padding: 0.25em 1em 1em 1em;
-//  max-width: 100vw;
+html,body {
+  min-height:100%;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 40px);
 }
 .text-light-thema{
   color: #222;
@@ -30,18 +33,59 @@
 }
 header{
   max-width: 100vw;
+  display: flex;
 }
-header.dark-thema{
+.dark-thema{
   background-color: #222;
 }
-header.light-thema{
+.light-thema{
   background-color: #fff;
 }
 header .title{
-  padding: 0.1em 0em 0.15em 1em;
+  padding: 0em 0em 0em 1em;
   font-family: 'Bree Serif', serif;
   font-size: 224%;
   color: #B6E002;
+}
+header ul{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+header ul li{
+  padding: 5px;
+  margin-top: auto;
+  margin-bottom:auto;
+  list-style: none;
+  font-family: 'Bree Serif', serif;
+}
+header ul li.menu{
+  font-size: 120%;
+  padding-right: 3em;
+}
+header ul li.logo {
+  font-size: 224%;
+  color: #B6E002;
+  margin-right: auto;
+  a:link { color: inherit; }
+  a:visited { color: inherit; }
+  a:hover { color: inherit; }
+  a:active { color: inherit; }
+}
+footer {
+  width: 100%;
+  height: 40px;
+  margin-top: auto;
+  display: block;
+  font-size: 75%;
+}
+footer ul{
+  margin: 0;
+}
+footer ul li{
+  list-style: none;
+  text-align: center;
 }
 .description{
   font-family: 'Noto Sans JP', sans-serif;
@@ -49,9 +93,19 @@ header .title{
 }
 .overlay-text {
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
   color: #222;
+}
+.overlay-text.top {
+  top: 0.5em;
+}
+.overlay-text.bottom {
+  bottom: 0.5em;
+}
+.overlay-text.left {
+  left:1em;
+}
+.overlay-text.right {
+  right: 0.5em;
 }
 .description .title{
   font-size: 225%;
@@ -59,7 +113,6 @@ header .title{
 }
 .description .text{
   padding: 0 1em;
-  width: 450px;
   font-size: 150%;
   font-weight: 400;
 }
@@ -69,16 +122,83 @@ header .title{
   overflow: hidden;
   object-fit: cover;
 }
-.heading .title{
+.break-band {
+  padding-bottom: 3em;
   background: #222;
-  padding: 2em 0 1em 1em;
+}
+.heading .title {
+  background: #222;
+  padding: 1.5em 0 0.25em 15px;
   font-size: 2.5em;
   font-weight: 700;
   font-family: 'Bree Serif', serif;
 }
-.heading .body{
-  padding: 0 0 0 2em;
-  font-weight: 300;
-  font-size: 2em;
+.heading .profile {
+  display: flex;
+  padding: 0 0 20px 20px;
+}
+.heading .icon {
+  width: 224px;
+  height:224px;
+  padding: 3px;
+  border: solid 3px #EEE;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px #AAA;
+}
+.heading .body {
+  margin-left: 10px;
   background: #fff;
+  font-weight: 300;
+  font-size: 1.25em;
+}
+ul {
+  line-height:1.5;
+}
+ul.child {
+  font-size:0.85em;
+}
+ul.user-list li{
+  list-style:none;
+  width: calc(100vw / 3);
+}
+ul.user-list li a{
+  display: block;
+  font-size: 1.75em;
+  background-color: #DDE;
+  border-left: solid 6px #B6E002;
+  padding-left: 10px;
+  font-family: 'Bree Serif', serif;
+}
+ul.user-list li p{
+  font-size:1.5em;
+  padding-left: 20px;
+  font-family: 'Bree Serif', serif;
+}
+ul.text li {
+  list-style: none;
+}
+ul.field li {
+  list-style: none;
+  font-family: 'Bree Serif', serif;
+}
+ul.field li:before {
+  content: '* ';
+}
+ul.contact li {
+  background-size: 1.2em;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 1.5em;
+}
+ul.contact li.twitter {
+  background-image: image-url("twitter.png");
+}
+ul.contact li.github{
+  background-image: image-url("github.png");
+}
+ul.contact li.discord {
+  background-image: image-url("discord.png");
+}
+ul.contact li.email {
+  background-image: image-url("email.png");
 }
