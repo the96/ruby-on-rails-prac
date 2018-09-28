@@ -1,0 +1,49 @@
+<%= render 'layouts/header' %>
+<div class="description">
+  <%= image_tag 'muhiyh_header',:class => 'bg_img' %>
+  <div class="overlay-text top left">
+    <p class="title">
+    ロケリ ロケリ & ロケリ
+    </p>
+    <p class="text" style="width:600px">
+    神戸屈指の音ゲーマー。最近はRocketLeagueに夢中。
+    </p>
+  </div>
+</div>
+<div class="break-band"></div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  About Me
+  </p>
+  <div class="profile">
+  <%= image_tag 'muhiyh_icon', :class => 'icon' %>
+  <ul class="body text">
+  <li>音ゲーとロケリの人</li>
+  <li>カラオケが好き。</li>
+  <li>a crowd of ribellionをよく歌う</li>
+  </ul
+  </div>
+</div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  Creative Field
+  </p>
+  <ul class="body field">
+    <li>Composer</li>
+    <li>Illustlator</li>
+    <li>Musician</li>
+    </ul>
+  </ul>
+</div>
+<div class="heading">
+  <p class="title text-dark-thema">
+  Contact
+  </p>
+  <ul class="body contact text">
+    <li class="twitter">Twitter: 
+    <%= link_to '@muhiyh', 'https://twitter.com/muhiyh', :target=>["_blank"] %>
+    </li>
+  </ul>
+</div>
+
+<%= render 'layouts/footer' %>

@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2018_09_28_005656) do
 
   create_table "contacts", force: :cascade do |t|
-    t.integer "member_id"
-    t.integer "type"
-    t.string "label"
+    t.integer "member_id", null: false
+    t.integer "type", default: 0, null: false
+    t.string "label", null: false
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,21 +23,22 @@ ActiveRecord::Schema.define(version: 2018_09_28_005656) do
   end
 
   create_table "creative_fields", force: :cascade do |t|
-    t.integer "member_id"
-    t.string "field"
+    t.integer "member_id", null: false
+    t.string "field", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_creative_fields_on_member_id"
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "member_name"
-    t.string "twitter_id"
+    t.string "member_name", null: false
+    t.string "twitter_id", null: false
     t.string "icon_img"
     t.string "header_img"
     t.text "plofile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["member_name"], name: "index_members_on_member_name", unique: true
   end
 
 end

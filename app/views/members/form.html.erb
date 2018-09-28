@@ -1,0 +1,60 @@
+<script type="text/javascript">
+var num = 1;
+function addCreativeFieldForm() {
+  var formDiv = document.getElementById("creative_fields_origin");
+  var cloneNode = formDiv.cloneNode(true);
+  cloneNode.id = "creative_fields_" + num;
+  num++;
+  
+  var delButton = document.createElement("button");
+  var labelNode = document.createTextNode("delete");
+  delButton.appendChild(labelNode);
+  cloneNode.appendChild(delButton);
+  var formNode = document.getElementById("creative_fields_form");
+  formNode.appendChild(cloneNode);
+}
+function removeCreativeFieldForm() {}
+</script>
+
+<%= form_for @member do |form| %>
+  <div class="field">
+  <%= form.label :member_name %>
+  <%= form.text_field :member_name, id: :member_name %>
+</div>
+
+<div class="field">
+  <%= form.label :twitter_id %>
+  <%= form.text_field :twitter_id, id: :twitter_id %>
+</div>
+
+<div class="field">
+  <%= form.label :icon_img %>
+  <%= form.text_field :icon_img, id: :icon_img %>
+</div>
+
+<div class="field">
+  <%= form.label :header_img %>
+  <%= form.text_field :header_img, id: :header_img %>
+</div>
+
+<div class="field">
+  <%= form.label :plofile %>
+  <%= form.text_area :plofile, id: :plofile %>
+</div>
+
+<div id="creative_fields_form">
+<%= form.fields_for :creative_fields do |cf| %>
+  <div class="field" id="creative_fields_origin">
+    <%= cf.label :field %>
+    <%= cf.text_field :field, id: :field %>
+  </div>
+<% end %>
+</div>
+
+<button class="btn btn-info" onClick='addCreativeFieldForm()'>add field
+</button>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
