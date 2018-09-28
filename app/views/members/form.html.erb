@@ -1,19 +1,52 @@
 <script type="text/javascript">
 var num = 1;
 function addCreativeFieldForm() {
+  /*
   var formDiv = document.getElementById("creative_fields_origin");
   var cloneNode = formDiv.cloneNode(true);
   cloneNode.id = "creative_fields_" + num;
   num++;
+  */
+  var newNode = document.createElement("div");
+  newNode.className="field";
+  newNode.id = "creative_fields_" + num;
+
+  var labelNode = document.createElement("label");
+  var labelText = document.createTextNode("Field");
+  labelNode.htmlFor = "member_creative_fields_attributes_"+ num +"_field";
+  labelNode.appendChild(labelText);
   
+  var inputNode = document.createElement("input");
+  inputNode.id = "field" + num;
+  inputNode.name = "member[creative_fields_attributes][" + num + "][field]";
+  inputNode.setAttribute("type", "text");
+
   var delButton = document.createElement("button");
-  var labelNode = document.createTextNode("delete");
-  delButton.appendChild(labelNode);
-  cloneNode.appendChild(delButton);
+  var delLabel = document.createTextNode("remove");
+  delButton.appendChild(delLabel);
+  delButton.type="button";
+  delButton.onclick = function() {removeCreativeFieldForm(this)};
+  delButton.id = num;
+
+  newNode.appendChild(labelNode);
+  newNode.appendChild(inputNode);
+  newNode.appendChild(delButton);
+
   var formNode = document.getElementById("creative_fields_form");
-  formNode.appendChild(cloneNode);
+  formNode.appendChild(newNode);
+  num++
 }
-function removeCreativeFieldForm() {}
+function removeCreativeFieldForm(event) {
+  var i = event.id;
+  while(i < num - 1) {
+    var inputNode = document.getElementById("field" + i);
+    i++;
+    inputNode.value = document.getElementById("field" + i).value;
+  }
+  var lastElement = document.getElementById("creative_fields_" + i);
+  lastElement.parentNode.removeChild(lastElement);
+  num--;
+}
 </script>
 
 <%= form_for @member do |form| %>
@@ -44,16 +77,18 @@ function removeCreativeFieldForm() {}
 
 <div id="creative_fields_form">
 <%= form.fields_for :creative_fields do |cf| %>
-  <div class="field" id="creative_fields_origin">
+  <div class="field" id="creative_fields_0">
     <%= cf.label :field %>
     <%= cf.text_field :field, id: :field %>
+    <%= button_tag type:'button', onclick:"removeCreativeFieldForm(this)" do %>
+    remove
+    <% end %>
   </div>
 <% end %>
 </div>
-
-<button class="btn btn-info" onClick='addCreativeFieldForm()'>add field
-</button>
-
+<%= button_tag type: 'button', onclick: "addCreativeFieldForm()" , class: "btn btn-info" do %>
+  <%= 'addField' %>
+<% end %>
 <div class="actions">
   <%= form.submit %>
 </div>
