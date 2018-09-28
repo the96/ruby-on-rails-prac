@@ -1,0 +1,31 @@
+* MemberName
+* TwitterId
+* IconImage
+* HeaderImage
+* Plofile
+* CreativeField
+* Contact
+  * twitter
+  * github
+  * soundcloud
+  * pixiv
+  * email
+  * discord
+  * steam
+
+Members
+* member_name[string]
+* twitter_id[string]
+* icon_img[string]
+* header_img[string]
+* plofile[text]
+
+CreativeFields
+* member_name
+* field[string]
+
+Contacts
+* member_name
+* type[integer:enum]
+* label[string]
+* url[string]

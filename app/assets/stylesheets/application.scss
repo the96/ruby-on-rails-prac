@@ -126,6 +126,15 @@ footer ul li{
   padding-bottom: 3em;
   background: #222;
 }
+.content-wrap {
+  background: #222;
+}
+.side-space {
+  min-width: 500px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .heading .title {
   background: #222;
   padding: 1.5em 0 0.25em 15px;
@@ -141,12 +150,12 @@ footer ul li{
   width: 224px;
   height:224px;
   padding: 3px;
+  margin-right: 10px;
   border: solid 3px #EEE;
   border-radius: 50%;
   box-shadow: 3px 3px 3px #AAA;
 }
 .heading .body {
-  margin-left: 10px;
   background: #fff;
   font-weight: 300;
   font-size: 1.25em;

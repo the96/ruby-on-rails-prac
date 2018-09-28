@@ -1,0 +1,2 @@
+class CreativeField < ApplicationRecord
+end
