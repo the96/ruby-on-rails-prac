@@ -5,6 +5,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.string :twitter_id, null: false
       t.string :icon_img
       t.string :header_img
+      t.integer :align, default: 0
       t.text :plofile
       t.timestamps
     end

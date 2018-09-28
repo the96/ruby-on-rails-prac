@@ -19,6 +19,8 @@ Members
 * icon_img[string]
 * header_img[string]
 * plofile[text]
+* align[integer:enum]
+
 
 CreativeFields
 * member_name

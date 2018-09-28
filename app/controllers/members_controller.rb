@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     @member.creative_fields.build
   end
   def member_object
-      params.require(:member).permit(:member_name, :twitter_id, :icon_img, :header_img, :plofile, creative_fields_attributes: [:field])
+      params.require(:member).permit(:member_name, :twitter_id, :icon_img, :header_img, :plofile, :align, creative_fields_attributes: [:field])
   end
   def create
     @member = Member.new(member_object)

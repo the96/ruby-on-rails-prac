@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_005656) do
     t.string "twitter_id", null: false
     t.string "icon_img"
     t.string "header_img"
+    t.integer "align"
     t.text "plofile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

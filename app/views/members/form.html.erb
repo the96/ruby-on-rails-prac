@@ -1,40 +1,32 @@
+<%= render 'layouts/header' %>
+<div class="heading side-space">
 <script type="text/javascript">
 var num = 1;
 function addCreativeFieldForm() {
-  /*
-  var formDiv = document.getElementById("creative_fields_origin");
+  var formDiv = document.getElementById("creative_fields_0");
   var cloneNode = formDiv.cloneNode(true);
   cloneNode.id = "creative_fields_" + num;
-  num++;
-  */
-  var newNode = document.createElement("div");
-  newNode.className="field";
-  newNode.id = "creative_fields_" + num;
-
-  var labelNode = document.createElement("label");
-  var labelText = document.createTextNode("Field");
-  labelNode.htmlFor = "member_creative_fields_attributes_"+ num +"_field";
-  labelNode.appendChild(labelText);
-  
-  var inputNode = document.createElement("input");
-  inputNode.id = "field" + num;
-  inputNode.name = "member[creative_fields_attributes][" + num + "][field]";
-  inputNode.setAttribute("type", "text");
-
-  var delButton = document.createElement("button");
-  var delLabel = document.createTextNode("remove");
-  delButton.appendChild(delLabel);
-  delButton.type="button";
-  delButton.onclick = function() {removeCreativeFieldForm(this)};
-  delButton.id = num;
-
-  newNode.appendChild(labelNode);
-  newNode.appendChild(inputNode);
-  newNode.appendChild(delButton);
-
+  var children = cloneNode.children;
+  Array.from(children).forEach(function(elem) {
+    switch(elem.tagName) {
+      case "LABEL":
+        elem.htmlFor = "member_creative_fields_attributes_"+ num +"_field";
+        break;
+      case "INPUT":        
+        elem.id = "field" + num;
+        elem.name = "member[creative_fields_attributes][" + num + "][field]";
+        elem.value = "";
+        break;
+      case "BUTTON":
+        elem.id = num;
+        break;
+      default:
+        break;
+    }
+  });
   var formNode = document.getElementById("creative_fields_form");
-  formNode.appendChild(newNode);
-  num++
+  formNode.appendChild(cloneNode);
+  num++;
 }
 function removeCreativeFieldForm(event) {
   var i = event.id;
@@ -75,12 +67,17 @@ function removeCreativeFieldForm(event) {
   <%= form.text_area :plofile, id: :plofile %>
 </div>
 
+<div class="field">
+  <%= form.label :align %>
+  <%= form.select :align, id: :align Member.aligns.keys.to_a, {} %>
+</div>
+
 <div id="creative_fields_form">
 <%= form.fields_for :creative_fields do |cf| %>
   <div class="field" id="creative_fields_0">
     <%= cf.label :field %>
     <%= cf.text_field :field, id: :field %>
-    <%= button_tag type:'button', onclick:"removeCreativeFieldForm(this)" do %>
+    <%= button_tag type:'button', onclick:"removeCreativeFieldForm(this)", id: '0' do %>
     remove
     <% end %>
   </div>
@@ -93,3 +90,5 @@ function removeCreativeFieldForm(event) {
   <%= form.submit %>
 </div>
 <% end %>
+</div>
+<%= render 'layouts/footer' %>
