@@ -48,11 +48,6 @@ function removeCreativeFieldForm(event) {
 </div>
 
 <div class="field">
-  <%= form.label :twitter_id %>
-  <%= form.text_field :twitter_id, id: :twitter_id %>
-</div>
-
-<div class="field">
   <%= form.label :icon_img %>
   <%= form.text_field :icon_img, id: :icon_img %>
 </div>
@@ -63,13 +58,23 @@ function removeCreativeFieldForm(event) {
 </div>
 
 <div class="field">
-  <%= form.label :plofile %>
-  <%= form.text_area :plofile, id: :plofile %>
+  <%= form.label :profile %>
+  <%= form.text_area :profile, id: :profile %>
+</div>
+
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title, id: :title %>
+</div>
+
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description, id: :description %>
 </div>
 
 <div class="field">
   <%= form.label :align %>
-  <%= form.select :align, id: :align Member.aligns.keys.to_a, {} %>
+  <%= form.select :align, Member.aligns.keys.to_a, {} %>
 </div>
 
 <div id="creative_fields_form">

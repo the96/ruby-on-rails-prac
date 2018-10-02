@@ -18,7 +18,9 @@ Members
 * twitter_id[string]
 * icon_img[string]
 * header_img[string]
-* plofile[text]
+* profile[text]
+* title[string]
+* description[text]
 * align[integer:enum]
 
 

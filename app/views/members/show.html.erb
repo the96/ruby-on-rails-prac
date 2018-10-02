@@ -1,11 +1,52 @@
 <%= render 'layouts/header' %>
-<ul class="body text">
-<li><%= @member.member_name %></li>
-<li><%= @member.twitter_id %></li>
-<li><%= @member.icon_img %></li>
-<li><%= @member.header_img %></li>
-<li><%= @member.plofile %></li>
-<li><%= @member.align %></li>
-<%= render @creative_fields %>
-</ul>
+<div class="description">
+  <%= image_tag @member.header_img, :class => 'bg_img' %>
+  <div class="overlay-text <%= @vertical %> <%= @horizontal %>">
+  <p class="title">
+  <%= @member.title %>
+  </p>
+  <p class="text" style="width:600px">
+  <%= @member.description %>
+  </p>
+</div>
+</div>
+<div class="break-band"></div>
+<div class="heading">
+  <div class="content-wrap">
+    <p class="title text-dark-thema side-space">
+      About Me
+    </p>
+  </div>
+  <div class="profile side-space">
+    <%= image_tag @member.icon_img, :class => 'icon' %>
+    <div>
+    <h2 class="member_name">
+      <%= @member.member_name %>
+    </h2>
+      <ul class="body text">
+      <%
+        @lines.map{|line| 
+      %>
+      <%=
+        content_tag(:li,line)
+      %>
+      <%
+        }
+      %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="heading">
+  <div class="content-wrap">
+    <p class="title text-dark-thema side-space">
+    Creative Field
+    </p>
+  </div>
+  <ul class="body field side-space">
+    <%= render @creative_fields %>
+  </ul>
+</div>
+
+
 <%= render 'layouts/footer' %>

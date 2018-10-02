@@ -1,21 +1,25 @@
 <%= render 'layouts/header' %>
 <div class="heading">
-<p class="title text-dark-thema">
+<p class="title text-dark-thema" style="padding-top:0">
 About Member
 </p>
+
 <ul class="user-list">
+
+<%
+
+@members.map {|member|
+%>
 <li>
-<%= link_to 'zerlock', members_zerlock_path %>
+<%= link_to member.member_name, "../member/#{member.member_name}" %>
 <p>
-Programmer, Scenario Writer.
+<%= member.title %>
 </p>
 </li>
-<li>
-<%= link_to 'Muhiyh', members_muhiyh_path %>
-<p>
-Composer, Illustlator, Musician.
-</p>
-</li>
+
+<%
+}
+%>
 
 </ul>
 </div>

@@ -32,11 +32,12 @@ ActiveRecord::Schema.define(version: 2018_09_28_005656) do
 
   create_table "members", force: :cascade do |t|
     t.string "member_name", null: false
-    t.string "twitter_id", null: false
     t.string "icon_img"
     t.string "header_img"
-    t.integer "align"
-    t.text "plofile"
+    t.string "title"
+    t.text "description"
+    t.integer "align", default: 0
+    t.text "profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_name"], name: "index_members_on_member_name", unique: true

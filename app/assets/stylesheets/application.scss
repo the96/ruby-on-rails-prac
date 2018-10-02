@@ -160,6 +160,10 @@ footer ul li{
   font-weight: 300;
   font-size: 1.25em;
 }
+.member_name {
+  padding-left: 0.75em;
+  font-family: 'Bree Serif', serif;
+}
 ul {
   line-height:1.5;
 }
@@ -179,9 +183,9 @@ ul.user-list li a{
   font-family: 'Bree Serif', serif;
 }
 ul.user-list li p{
-  font-size:1.5em;
+  //font-size:1.5em;
   padding-left: 20px;
-  font-family: 'Bree Serif', serif;
+  //font-family: 'Bree Serif', serif;
 }
 ul.text li {
   list-style: none;
